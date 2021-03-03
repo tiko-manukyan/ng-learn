@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent implements OnInit {
+  title = 'My Card Title'
+  ImgUrl = 'https://cdn.auth0.com/blog/angular/logo3.png'
 
-  constructor() { }
-
-  ngOnInit(): void {
+  ngOnInit() {
+    setTimeout(() => {
+      this.ImgUrl = 'https://www.braveterry.com/wp-content/uploads/2015/12/vue.js.png'
+    }, 4000)
   }
 
 }
