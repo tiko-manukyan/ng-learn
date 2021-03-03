@@ -8,5 +8,6 @@ import {Component} from '@angular/core';
 })
 
 export class ServerComponent {
-
+  public serverId = 10;
+  public serverStatus = 'offline';
 }

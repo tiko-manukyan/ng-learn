@@ -1,4 +1,12 @@
-<h3>This is all you servers</h3>
-
+<label>Server Name</label>
+<input class="form-control"
+       type="text"
+       [(ngModel)]="serverName"
+       >
+<p>{{ serverName }}</p>
+<button class="btn btn-primary"
+        [disabled]="!allowNewServer"
+        (click)="onCreateServer()" >Add Server</button>
+<p>{{ serverCreationStatus }}</p>
 <app-server></app-server>
 <app-server></app-server>
