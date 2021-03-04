@@ -6,11 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./servers.component.css']
 })
 export class ServersComponent {
- public title = 'My Card Title';
- public ImgUrl = 'https://cdn.auth0.com/blog/angular/logo3.png';
- public disable = false;
- public isServer = 'Server is not created';
- public mouseOn = '';
+  public title = 'My Card Title';
+  public ImgUrl = 'https://cdn.auth0.com/blog/angular/logo3.png';
+  public disable = false;
+  public isServer = 'Server is not created';
+  public mouseOn = '';
+  public serverName = 'tikov';
 
 
 
@@ -22,18 +23,19 @@ export class ServersComponent {
     }, 4000);
   }
 
-createServer(event: any): void {
-    this.isServer = 'Server Created!'
-    }
+  createServer(event: any): void {
+    const serverName = prompt('server name');
+    this.isServer = `Server ${serverName} Created!`;
+  }
 
-onMousecheck(event:any) {
+  onMousecheck(event:any) {
     this.mouseOn = 'You can type text';
 
-}
+  }
 
-mouseLeave(event:any) {
+  mouseLeave(event:any) {
     this.mouseOn = '';
+  }
+
+
 }
-
-
- }
