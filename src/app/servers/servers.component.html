@@ -2,9 +2,18 @@
     <h2> {{title}}</h2>
     <p>My Sample Text</p>
     <p>My Info:</p>
-  <div class="images">
-    <img src="{{ImgUrl}}">
+    <div class="images">
+      <img src="{{ImgUrl}}">
+    </div>
   </div>
+  <button class="btn btn-primary"
+          [disabled]="!disable"
+          (click)="createServer($event)">Add Server</button>
+  <p>{{ isServer }}</p>
+  <input class=" btn-primary"
+         type="text"
+         (mouseover)="onMousecheck($event)"
+          (mouseleave)="mouseLeave($event)">
+  <p>{{ mouseOn }}</p>
 
 
-  </div>
