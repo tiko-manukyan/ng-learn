@@ -1,8 +1,8 @@
-  <button class="btn btn-primary"
-          (click)="onServerCreate()"
-          [disabled]="log.length === 9"
-          [ngStyle]="{backgroundColor:log.length === 9 ? 'red' : 'green'}">Add Server</button>
-  <p *ngIf="addServer">Server was Created</p>
-  <div *ngFor="let logItem of log"
-       [ngClass]="{serverCss: logItem > 3}">{{ logItem }}...</div>
-
+<input class="form-control" type="text" [(ngModel)]="textInput">
+<button class="btn btn-primary"
+        (click)="onServerCreate()"
+        [disabled]="!textInput"
+        [ngStyle]="{backgroundColor:log.length === 9 ? 'red' : 'green'}">Add Server</button>
+<p *ngIf="addServer">Server was Created</p>
+<div *ngFor="let logItem of log; let i = index;"
+     [ngClass]="{serverCss: i > 3}">{{ logItem }}...</div>

@@ -13,7 +13,8 @@ import { Component } from '@angular/core';
 })
 export class ServersComponent {
   public addServer = false;
-  public log = [];
+  public log: number[] = [];
+  public textInput = '';
 
 
 
@@ -21,14 +22,9 @@ export class ServersComponent {
 
   }
 
-  // tslint:disable-next-line:typedef
-  onServerCreate() {
+  onServerCreate(): void {
     this.addServer = !this.addServer;
-    // @ts-ignore
-    this.log.push(this.log.length + 1);
+    this.log.push(this.log.length);
   }
-
-
-
 
 }
