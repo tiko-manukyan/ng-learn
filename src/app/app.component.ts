@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'learn-ng';
+
+
+  public route = 'recipe';
+
+  handleRedirect(path: string): void {
+    this.route = path;
+  }
 }
