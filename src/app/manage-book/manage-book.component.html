@@ -1,0 +1,25 @@
+<form>
+  <div class="row">
+    <div class="col">
+      <input class="form-control"
+             type="text"
+             placeholder="Tittle" #bookTittle>
+    </div>
+    <div class="col">
+      <input class="form-control"
+             type="text"
+             placeholder="Author"
+             name="author"
+             [(ngModel)]="authorName">
+    </div>
+    <div class="col">
+      <input class="form-control"
+             type="text"
+             placeholder="Image src"
+             #imageSrc>
+    </div>
+  </div>
+  <button class="btn btn-success mt-2"
+          (click)="onSaveBook(imageSrc)">Save Book</button>
+</form>
+
