@@ -1,0 +1,12 @@
+<div>
+  <span (click)="onDeleteBook()">x</span>
+  <div class="row" (click)="onSelectBook()">
+    <div class="col-2 p-0">
+      <img [src]="book.image">
+    </div>
+    <div class="col-8 ml-3">
+      <p>Title: <strong>{{ book.title }}</strong></p>
+      <p>Author: <strong>{{ book.author }}</strong></p>
+    </div>
+  </div>
+</div>

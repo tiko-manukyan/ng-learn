@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, Output, EventEmitter} from '@angular/core';
 import {Book} from '../book.model';
 
 @Component({
@@ -9,11 +9,25 @@ import {Book} from '../book.model';
 export class LibraryComponent implements OnInit {
   @Input() public books: Book[];
   public showBooks = false;
+  public imageUrl: any;
+  @Output() onBookDeleted = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
 
   }
+
+  a(image: string): void {
+    this.imageUrl = image;
+  }
+
+  b(book: Book): void {
+    this.onBookDeleted.emit(book);
+  }
+
+
+
+
 
 }

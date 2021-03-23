@@ -1,0 +1,32 @@
+.row  {
+  cursor: pointer;
+  transition: background-color 1s;
+  border-radius: 10px;
+  box-shadow: 0 0 5px 1px grey;
+}
+
+img {
+  width: 80px;
+  height: 110px;
+  border-radius: 10px;
+
+}
+
+.row:hover {
+  background-color: #e0e0e0;
+}
+
+.col-8 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+span {
+  position: relative;
+  top: 33px;
+  left: 350px;
+  color: red;
+  font-weight: bolder;
+  cursor: pointer;
+}

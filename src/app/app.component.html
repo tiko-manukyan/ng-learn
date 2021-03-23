@@ -1,10 +1,14 @@
 <div class="container">
   <div class="row">
-    <div class="col-8">
+    <div class="col">
       <app-manage-book (bookAdded)="onBookAdded($event)"></app-manage-book>
     </div>
-    <div class="col-4">
-      <app-library [books]="books"></app-library>
+  </div>
+  <div class="row">
+    <div class="col">
+      <app-library
+        [books]="books"
+        (onBookDeleted)="c($event)"></app-library>
     </div>
   </div>
 </div>
