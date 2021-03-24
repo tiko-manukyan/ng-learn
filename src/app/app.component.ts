@@ -8,16 +8,16 @@ import {Book} from './book.model';
 })
 export class AppComponent {
   // @ts-ignore
-  public books: any = JSON.parse(localStorage.getItem('books')) || [];
+  public books: Book[] = JSON.parse(localStorage.getItem('book')) || [];
 
-  onBookAdded(book: Book): void {
+  onBookCreated(book: Book): void {
     this.books.push(book);
-    localStorage.setItem('books',  JSON.stringify(this.books));
+    localStorage.setItem('book', JSON.stringify(this.books));
   }
 
-  c(book: Book): void {
-    const index = this.books.findIndex((item: Book) => item.title === book.title);
+  onDeletedBook(index: number): void {
     this.books.splice(index, 1);
-    localStorage.setItem('books',  JSON.stringify(this.books));
+    localStorage.setItem('book', JSON.stringify(this.books));
+
   }
 }

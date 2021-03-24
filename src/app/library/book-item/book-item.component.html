@@ -1,8 +1,8 @@
 <div>
-  <span (click)="onDeleteBook()">x</span>
+  <span (click)="onBookDelete()">x</span>
   <div class="row" (click)="onSelectBook()">
     <div class="col-2 p-0">
-      <img [src]="book.image">
+      <img [src]="book.imagePath">
     </div>
     <div class="col-8 ml-3">
       <p>Title: <strong>{{ book.title }}</strong></p>

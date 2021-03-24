@@ -1,15 +1,17 @@
-<button class="btn btn-primary mt-2" (click)="showBooks = !showBooks">{{ showBooks ? 'Hide' : 'Show' }} Library</button>
-<div class="mt-2" *ngIf="showBooks">
+<button class="btn btn-primary mt-2" (click)="onToggleContent()">{{ !showContent ? 'Show' : 'Hide' }} Library</button>
+<div class="mt-2" *ngIf="showContent">
   <div class="row">
     <div class="col-8">
-      <app-selected-book [image]="imageUrl"></app-selected-book>
+      <app-selected-book [imageURL]="imageURL"
+                         *ngIf="imageURL"
+      ></app-selected-book>
     </div>
     <div class="col-4">
       <app-book-item
+        (selectedBook)="a(book.imagePath)"
         [book]="book"
-        *ngFor="let book of books"
-        (bookSelected)="a($event)"
-        (bookDeleted)="b($event)"></app-book-item>
+        (bookDeleted)="onBookDeleted(i)"
+        *ngFor="let book of books; let i = index"></app-book-item>
     </div>
   </div>
 </div>

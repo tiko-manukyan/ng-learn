@@ -6,7 +6,7 @@ import {Component, Input, OnInit, Output} from '@angular/core';
   styleUrls: ['./selected-book.component.css']
 })
 export class SelectedBookComponent implements OnInit {
-  @Input() image: any;
+  @Input() imageURL: string;
 
 
   constructor() { }

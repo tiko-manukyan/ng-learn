@@ -1,14 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col">
-      <app-manage-book (bookAdded)="onBookAdded($event)"></app-manage-book>
+      <app-manage-book (bookSaved)="onBookCreated($event)"></app-manage-book>
     </div>
   </div>
   <div class="row">
     <div class="col">
-      <app-library
-        [books]="books"
-        (onBookDeleted)="c($event)"></app-library>
+      <app-library [books]="books"
+      (deletedBook)="onDeletedBook($event)"></app-library>
     </div>
   </div>
 </div>

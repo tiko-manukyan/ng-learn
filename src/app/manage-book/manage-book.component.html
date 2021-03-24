@@ -3,23 +3,26 @@
     <div class="col">
       <input class="form-control"
              type="text"
-             placeholder="Tittle" #bookTittle>
+             placeholder="Tittle"
+             name="title"
+             [(ngModel)]="title">
     </div>
     <div class="col">
       <input class="form-control"
              type="text"
              placeholder="Author"
              name="author"
-             [(ngModel)]="authorName">
+             [(ngModel)]="author"
+             >
     </div>
     <div class="col">
       <input class="form-control"
              type="text"
              placeholder="Image src"
-             #imageSrc>
+             name="imagePath"
+             [(ngModel)]="imagePath">
     </div>
   </div>
-  <button class="btn btn-success mt-2"
-          (click)="onSaveBook(imageSrc)">Save Book</button>
+  <button class="btn btn-success mt-2" (click)="onSaveBook()">Save Book</button>
 </form>
 

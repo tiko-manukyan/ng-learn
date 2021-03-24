@@ -7,28 +7,26 @@ import {Book} from '../book.model';
   styleUrls: ['./manage-book.component.css']
 })
 export class ManageBookComponent implements OnInit {
-  public authorName: string;
-  @ViewChild('bookTittle') bookTittle: ElementRef;
-  @Output() bookAdded = new EventEmitter<Book>();
 
+  public author: string;
+  public title: string;
+  public imagePath: string;
+  @Output() bookSaved = new EventEmitter<Book>();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-
-  public onSaveBook(imagePath: HTMLInputElement): void {
-    const imageSrc = imagePath.value;
-    const tittleBook = this.bookTittle.nativeElement.value;
-    const book = new Book(tittleBook, this.authorName, imageSrc);
-    this.bookAdded.emit(book);
-    this.clearForm(imagePath);
+  onSaveBook(): void {
+    const bookItem = new Book(this.title, this.author, this.imagePath);
+    this.bookSaved.emit(bookItem);
+    this.author = '';
+    this.title = '';
+    this.imagePath = '';
   }
 
-  private clearForm(imagePath: HTMLInputElement): void {
-    this.authorName = '';
-    imagePath.value = '';
-    this.bookTittle.nativeElement.value = '';
-  }
+
+
+
 }

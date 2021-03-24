@@ -7,24 +7,36 @@ import {Book} from '../book.model';
   styleUrls: ['./library.component.css']
 })
 export class LibraryComponent implements OnInit {
-  @Input() public books: Book[];
-  public showBooks = false;
-  public imageUrl: any;
-  @Output() onBookDeleted = new EventEmitter();
+  @Input() books: Book[];
+  @Output() deletedBook = new EventEmitter<number>();
+  public showContent = false;
+  public imageURL: string;
+
 
   constructor() { }
 
   ngOnInit(): void {
 
+
   }
 
-  a(image: string): void {
-    this.imageUrl = image;
+  onBookDeleted(i: number): void {
+    this.deletedBook.emit(i);
   }
 
-  b(book: Book): void {
-    this.onBookDeleted.emit(book);
+  onToggleContent(): void {
+    this.showContent = !this.showContent;
+    if (!this.showContent) {
+      this.imageURL = '';
+    }
+
   }
+
+  a(bookImage: string) {
+    this.imageURL = bookImage;
+  }
+
+
 
 
 

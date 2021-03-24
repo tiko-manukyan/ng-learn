@@ -8,24 +8,22 @@ import {Book} from '../../book.model';
 })
 export class BookItemComponent implements OnInit {
   @Input() book: Book;
-  @Output() bookSelected = new EventEmitter();
-  @Output() bookDeleted = new EventEmitter();
-
-
+  @Output() bookDeleted = new EventEmitter<void>();
+  @Output() selectedBook = new EventEmitter<void>();
 
   constructor() { }
 
   ngOnInit(): void {
+
+  }
+
+  onBookDelete(): void {
+    this.bookDeleted.emit();
+
   }
 
   onSelectBook(): void {
-    this.bookSelected.emit(this.book.image);
+    this.selectedBook.emit();
   }
-
-
-  onDeleteBook(): void {
-    this.bookDeleted.emit(this.book);
-  }
-
 
 }
