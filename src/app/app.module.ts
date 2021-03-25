@@ -6,8 +6,9 @@ import { AppComponent } from './app.component';
 import { ManageBookComponent } from './manage-book/manage-book.component';
 import {FormsModule} from '@angular/forms';
 import { LibraryComponent } from './library/library.component';
-import { BookItemComponent } from './library/book-item/book-item.component';
+import { BookItemComponent } from './shared/book-item/book-item.component';
 import { SelectedBookComponent } from './library/selected-book/selected-book.component';
+import {SearchBookComponent} from './search-book/search-book.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { SelectedBookComponent } from './library/selected-book/selected-book.com
     ManageBookComponent,
     LibraryComponent,
     BookItemComponent,
-    SelectedBookComponent
+    SelectedBookComponent,
+    SearchBookComponent
   ],
     imports: [
         BrowserModule,

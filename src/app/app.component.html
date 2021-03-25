@@ -1,14 +1,20 @@
-<div class="container">
-  <div class="row">
-    <div class="col">
-      <app-manage-book (bookSaved)="onBookCreated($event)"></app-manage-book>
+<div class="container mt-5">
+  <div *ngIf="!showSearchContent">
+    <div class="row">
+      <div class="col">
+        <app-manage-book (bookSaved)="onBookCreated($event)"
+                         (goToSearch)="onGoToSearch()"></app-manage-book>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <app-library [books]="books"
+                     (deletedBook)="onDeletedBook($event)"></app-library>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col">
-      <app-library [books]="books"
-      (deletedBook)="onDeletedBook($event)"></app-library>
-    </div>
-  </div>
+  <app-search-book *ngIf="showSearchContent"
+                   [books]="books"
+                   (toMainPage)="onGoToSearch()"
+  ></app-search-book>
 </div>
-<input (input)="onSearch($event)" type="text">

@@ -12,6 +12,7 @@ export class ManageBookComponent implements OnInit {
   public title: string;
   public imagePath: string;
   @Output() bookSaved = new EventEmitter<Book>();
+  @Output() goToSearch = new EventEmitter();
 
   constructor() { }
 
@@ -26,6 +27,11 @@ export class ManageBookComponent implements OnInit {
     this.imagePath = '';
   }
 
+  onSearch(): void {
+    this.goToSearch.emit();
+
+
+  }
 
 
 
