@@ -28,6 +28,14 @@ export class AppComponent {
   }
 
   onSortButton(): void {
-    console.log(this.books.sort(), 'gggg');
+    console.log(this.books.sort((a: Book, b: Book) => {
+      if ( a.title < b.title ) {
+        return -1;
+      }
+      if ( a.title > b.title ) {
+        return 1;
+      }
+      return 0;
+    }));
   }
 }
