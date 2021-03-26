@@ -11,6 +11,7 @@ export class LibraryComponent implements OnInit {
   @Output() deletedBook = new EventEmitter<number>();
   public showContent = false;
   public imageURL: string;
+  @Output() sortByTitle = new EventEmitter();
 
 
   constructor() { }
@@ -32,8 +33,12 @@ export class LibraryComponent implements OnInit {
 
   }
 
-  a(bookImage: string) {
+  a(bookImage: string): void {
     this.imageURL = bookImage;
+  }
+
+  onSortedByTitle(): void {
+  this.sortByTitle.emit();
   }
 
 

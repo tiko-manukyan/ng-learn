@@ -3,13 +3,16 @@
     <div class="row">
       <div class="col">
         <app-manage-book (bookSaved)="onBookCreated($event)"
-                         (goToSearch)="onGoToSearch()"></app-manage-book>
+                         (goToSearch)="onGoToSearch()"
+        ></app-manage-book>
       </div>
     </div>
     <div class="row">
       <div class="col">
         <app-library [books]="books"
-                     (deletedBook)="onDeletedBook($event)"></app-library>
+                     (deletedBook)="onDeletedBook($event)"
+                     (sortByTitle)="onSortButton()"
+        ></app-library>
       </div>
     </div>
   </div>

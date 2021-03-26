@@ -26,4 +26,8 @@ export class AppComponent {
   onGoToSearch(): void {
     this.showSearchContent = !this.showSearchContent;
   }
+
+  onSortButton(): void {
+    console.log(this.books.sort(), 'gggg');
+  }
 }

@@ -7,7 +7,7 @@
       ></app-selected-book>
     </div>
     <div class="col-4">
-      <button>title</button>
+      <button class="btn btn-primary small" (click)="onSortedByTitle()">Sort by title</button>
 
       <app-book-item
         (selectedBook)="a(book.imagePath)"
