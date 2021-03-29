@@ -20,19 +20,26 @@ export class ManageBookComponent implements OnInit {
   }
 
   onSaveBook(): void {
+
+    if (!this.isValid()) {
+      return alert('Invalid') ;
+    }
     const bookItem = new Book(this.title, this.author, this.imagePath);
     this.bookSaved.emit(bookItem);
     this.author = '';
     this.title = '';
     this.imagePath = '';
+
+
+
   }
+
 
   onSearch(): void {
     this.goToSearch.emit();
-
-
   }
 
-
-
+  isValid(): boolean {
+    return !!(this.author && this.imagePath && this.title);
+  }
 }
