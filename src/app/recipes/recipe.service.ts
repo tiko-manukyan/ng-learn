@@ -8,10 +8,20 @@ import { Ingredient} from '../shared/ingredient.model';
 export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
-    // tslint:disable-next-line:max-line-length
-    new Recipe('A Test Recipe', 'This is simply a test', 'https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_1280.jpg', [ new Ingredient('potato', 3)]),
-    // tslint:disable-next-line:max-line-length
-    new Recipe('A New Recipe', 'This is simply a new test', 'https://cdn.pixabay.com/photo/2016/06/15/19/09/food-1459693_1280.jpg', [ new Ingredient('onion', 5)])
+    new Recipe('Tasty Schnitzel',
+      'A tasty schnitzel - Just Awesome',
+      'https://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-5.jpg',
+      [
+        new Ingredient('Meat', 1),
+        new Ingredient('French Fries', 20)
+      ]),
+    new Recipe('Big Fat Burger',
+      'What Else You Need to Say?',
+      'https://buy.am/media/image/c6/e0/3d/Veggie-burger-Pastrami-New.jpg',
+      [
+        new Ingredient('Buns', 2),
+        new Ingredient('Meat', 1)
+      ])
   ];
 
   constructor( ) { }
