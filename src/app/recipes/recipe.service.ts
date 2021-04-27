@@ -9,6 +9,7 @@ export class RecipeService {
   recipeSelected = new EventEmitter<Recipe>();
   private recipes: Recipe[] = [
     new Recipe('Tasty Schnitzel',
+      1,
       'A tasty schnitzel - Just Awesome',
       'https://www.daringgourmet.com/wp-content/uploads/2014/03/Schnitzel-5.jpg',
       [
@@ -16,6 +17,7 @@ export class RecipeService {
         new Ingredient('French Fries', 20)
       ]),
     new Recipe('Big Fat Burger',
+      2,
       'What Else You Need to Say?',
       'https://buy.am/media/image/c6/e0/3d/Veggie-burger-Pastrami-New.jpg',
       [
@@ -28,6 +30,10 @@ export class RecipeService {
 
   getRecipes(): Recipe[] {
     return this.recipes.slice();
+  }
+
+  getRecipe(id: number): any {
+    return  this.recipes.find((rec) => rec.id === id);
   }
 
 

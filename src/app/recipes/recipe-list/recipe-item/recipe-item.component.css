@@ -1,3 +1,7 @@
 .list-group-item {
   background-color: transparent !important;
 }
+
+.selected {
+  background-color: #ccc !important;
+}
