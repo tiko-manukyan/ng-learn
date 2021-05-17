@@ -17,8 +17,6 @@ export class ShoppingEditComponent implements OnInit {
   editMode = false;
   indexOfEditItem: number;
   editingItem: Ingredient;
-  deleteItem: Ingredient;
-  indexOfDeleteItem: number;
 
   constructor(private slService: ShoppingListService) {
   }
@@ -33,11 +31,6 @@ export class ShoppingEditComponent implements OnInit {
         amount: this.editingItem.amount
       })
     });
-    this.slService.startDelete.subscribe((index: number) => {
-      this.indexOfDeleteItem = index;
-      this.deleteItem = this.slService.getIngredient(index);
-      console.log(this.deleteItem);
-    })
   }
 
   onSubmit(form) {
@@ -53,7 +46,8 @@ export class ShoppingEditComponent implements OnInit {
   }
 
   onDeleteItem() {
-    this.slService.onDeleteIngredient(this.indexOfDeleteItem)
+    this.slService.onDeleteIngredient(this.indexOfEditItem);
+    this.onClear();
   }
 
   onClear() {
